@@ -2,9 +2,9 @@
 This is a note taking app
 
 user can:
-  Add note
-  Edit note
-  Delete note
+ 1.  Add note
+ 2.  Edit note
+ 3.  Delete note
   
 Also
-  User can pick any border color of choice for each taken note.
+ 4.  User can pick any border color of choice for each taken note as each note should be in a colored border
