@@ -8,4 +8,4 @@ user can:
   
 Also
 
- 4.  User can pick any border color of choice for each taken note as each note should be in a colored border
+ 4.  User can pick any border color of choice for each taken note.
