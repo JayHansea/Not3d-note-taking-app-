@@ -1,0 +1,109 @@
+* {
+			    margin: 0;
+			    padding: 0;
+			    box-sizing: border-box;
+			    font-family: Arial, Helvetica, sans-serif;
+			}
+
+			body {
+				background: #3366ff;
+				color: #fff;
+			}
+
+			.container {
+			    padding: 9vh 2vw 2vh 2vw;
+			}
+
+			#header {
+				font-weight: 400;
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				text-align: center;
+			}
+
+			#title {
+			    border-radius: 10px 10px 0 0;
+			    border: 2px solid #fff;
+			}
+
+			#title::placeholder {
+			    color: #3366ff;
+			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			#message {
+			    border-radius: 0;
+			    border: 2px solid #fff;
+			}
+
+			#message::placeholder {
+			    color: #3366ff;
+			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			#color {
+			    border-radius: 0;
+			    border: 2px solid #fff;
+			}
+
+			.take-note {
+			    padding: 0 5vw;
+			}
+
+			#post {
+			    background: #0da00d;
+			    color: #fff;
+			    border-radius: 0 0 0 10px;
+			    border: 2px solid #0da00d;
+			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			#clear {
+			    background: #ffc107;
+			    color: #fff;
+			    border-radius: 0 0 10px 0;
+			    border: 2px solid #ffc107;
+			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			.mod1 {
+				color: #666;
+			}
+
+			.mod2 {
+				color: #0da00d;
+			}
+
+			.modal-header {
+				border-bottom: none;
+			}
+
+			.modal-body {
+				font-size: 1.3em;
+			}
+
+			.modal-footer {
+				border-top: none;
+			}
+
+			#yes {
+			    background: #0da00d;
+			    color: #fff;
+			    border-radius: 10px 0 0 10px;
+			    border: 2px solid #0da00d;
+			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			#no {
+			    color: #fff;
+			    border-radius: 0 10px 10px 0;
+			    border: 2px solid #6c757d;
+			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+
+			#close {
+				background: #0da00d;
+			    color: #fff;
+			    border-radius: 10px;
+			    border: 2px solid #0da00d;
+			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}

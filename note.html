@@ -2,89 +2,26 @@
 <html>
     <head>
         <title>Note Taking App</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-        <style>
-        	* {
-			    margin: 0;
-			    padding: 0;
-			    box-sizing: border-box;
-			    font-family: Arial, Helvetica, sans-serif;
-			}
+        <!-- bootstrap css -->
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 
-			body {
-				background: #3366ff;
-				color: #fff;
-			}
-
-			.container {
-			    padding: 10vh 2vw;
-			}
-
-			#header {
-				font-weight: 400;
-				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-				text-align: center;
-			}
-
-			#title {
-			    border-radius: 10px 10px 0 0;
-			    border: 2px solid #fff;
-			}
-
-			#title::placeholder {
-			    color: #3366ff;
-			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			}
-
-			#message {
-			    border-radius: 0;
-			    border: 2px solid #fff;
-			}
-
-			#message::placeholder {
-			    color: #3366ff;
-			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			}
-
-			#color {
-			    border-radius: 0;
-			    border: 2px solid #fff;
-			}
-
-			.take-note {
-			    padding: 0 5vw;
-			}
-
-			#post {
-			    background: #0da00d;
-			    color: #fff;
-			    border-radius: 0 0 0 10px;
-			    border: 2px solid #0da00d;
-			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			}
-
-			#clear {
-			    background: #ffc107;
-			    color: #fff;
-			    border-radius: 0 0 10px 0;
-			    border: 2px solid #ffc107;
-			    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			}
-
-        </style>
+        <!-- custom css -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+    	<!-- note app interface -->
         <div class="container">
-        	<h1 class="pb-3 display-4" id="header">Not3d</h1>
+        	<h1 class="pb-5 display-4" id="header">Not3d</h1>
             <div class="row">
-                <div class="col-md-6 px-5 py-3 take-note">
+            	<div class="col-md-2 col-sm-12"></div>
+                <div class="col-md-8 col-sm-12 pb-5 take-note">
                     <form>
                         <div class="form-group">
                             <input id="title" class="form-control" type="text" placeholder="enter title">
                         </div>
                         <div class="form-group">
-                            <textarea id="message" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="enter your message"></textarea>
+                            <textarea id="message" class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="enter your message"></textarea>
                         </div>
                         <div class="form-group">
                             <label>Choose border color for note</label>
@@ -94,87 +31,61 @@
                         <button id="clear" type="submit" class="btn">Clear</button>
                     </form>
                 </div>
-                <div class="col-md-6 py-3 display"></div>
+                <div class="col-md-2 col-sm-12"></div>
             </div>
+            <div class="col-md-12 col-sm-12 py-3 display"></div>
+
+            <!-- Modal -->
+            <div class="modal mod1 fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            	<div class="modal-dialog modal-dialog-centered" role="document">
+            		<div class="modal-content">
+            			<div class="modal-header">
+            				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            					<span aria-hidden="true">&times;</span>
+            				</button>
+            			</div>
+            			<div class="modal-body text-center">
+            				Are you sure you want to delete note?
+            			</div>
+            			<div class="modal-footer">
+            				<button type="button" id="yes" class="btn" data-toggle="modal" data-target="#exampleModalCenter1" data-dismiss="modal">Yeah sure!</button>
+            				<button type="button" id="no" class="btn btn-secondary" data-dismiss="modal">No</button>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal mod2 fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            	<div class="modal-dialog modal-dialog-centered" role="document">
+            		<div class="modal-content">
+            			<div class="modal-header">
+            				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            					<span aria-hidden="true">&times;</span>
+            				</button>
+            			</div>
+            			<div class="modal-body del text-center">
+            				<h1>Delete Successful</h1>
+            			</div>
+            			<div class="modal-footer">
+            				<button type="button" id="close" class="btn" data-dismiss="modal">Close</button>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+
         </div>
         
 
+        <!-- jquery.min.js -->
+        <script src="bootstrap/js/jquery.min.js"></script>
+        <!-- popper.min.js -->
+        <script src="bootstrap/js/popper.min.js"></script>
+        <!-- bootstrap.min.js -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- custom js -->
+        <script src="js/main.js"></script>
 
-        <script>
-        	let data = [];
-        	console.log(data);
-
-
-        	let div = document.createElement('div');
-			let edit = document.createElement('button');
-			let dlt = document.createElement('button');
-			let display = document.querySelector('.display');
-			let head = document.querySelector('#title');
-			let color = document.querySelector('#color');
-			let body = document.querySelector('#message');
-			let post = document.querySelector('#post');
-			let clear = document.querySelector('#clear');
-
-
-			edit.innerHTML = "Edit";
-		    edit.style.background = "#0da00d";
-		    edit.style.border = "2px solid #0da00d";
-		    edit.style.color = "#fff";
-		    edit.style.borderRadius = "10px 0 0 10px";
-		    edit.style.padding = ".375rem .75rem";
-
-		    dlt.innerHTML = "Delete";
-		    dlt.style.background = "#dc3545";
-		    dlt.style.border = "2px solid #dc3545";
-		    dlt.style.color = "#fff";
-		    dlt.style.borderRadius = "0 10px 10px 0";
-		    dlt.style.padding = ".375rem .75rem";
-
-
-			clear.addEventListener('click', (e) => {
-				e.preventDefault();
-			    head.value = "";
-			    body.value = "";
-			}) 
-
-			post.addEventListener('click', (e) => {
-				e.preventDefault();
-				let headValue = head.value;
-			    let bodyValue = body.value;
-
-			    data.push({"title":headValue, "body":bodyValue});
-			   
-			    div.style.border = "2px solid" + color.value;
-			    div.style.padding = "2%";
-			    for (let i = 0; i < data.length; i++) {
-			    	div.innerHTML = "<h3>" + data[i].title + "</h3>" + "<p>" + data[i].body + "</p>";
-			    }
-			    div.style.textAlign = "justify";
-			    div.style.borderRadius = "10px";
-			    div.appendChild(edit);
-			    div.appendChild(dlt);
-			    display.appendChild(div);
-			});
-
-			dlt.addEventListener("click", () => {
-				let yes = confirm("Are you sure you want to delete note?");
-				if (yes) {
-					div.style.display = "none";
-					window.location.reload();
-				}
-			});
-
-			edit.addEventListener('click', () => {
-				for (let i = 0; i < data.length; i++) {
-			    	head.value = data[i].title;
-			    	body.value = data[i].body;
-			    }
-
-			});
-        </script>
     </body>
 </html>
