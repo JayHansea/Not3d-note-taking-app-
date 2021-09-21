@@ -2,9 +2,9 @@ let data = [];
 
 
 let display = document.querySelector('.display');
-let head = document.querySelector('#title');
+let noteHead = document.querySelector('#title');
 let color = document.querySelector('#color');
-let body = document.querySelector('#message');
+let noteBody = document.querySelector('#message');
 let post = document.querySelector('#post');
 let clear = document.querySelector('#clear');
 let yes = document.querySelector("#yes");
@@ -12,16 +12,18 @@ let yes = document.querySelector("#yes");
 
 clear.addEventListener('click', (e) => {
 	e.preventDefault();
-    head.value = "";
-    body.value = "";
+    noteHead.value = "";
+    noteBody.value = "";
 }) 
 
 post.addEventListener('click', (e) => {
 	e.preventDefault();
-	let headValue = head.value;
-    let bodyValue = body.value;
 
-    data.push({"title":headValue, "body":bodyValue});
+    document.style.display = modalPost;
+	let headValue = noteHead.value;
+    let bodyValue = noteBody.value;
+
+    data.push({"title":headValue, "noteBody":bodyValue});
    
     
    
@@ -68,11 +70,16 @@ post.addEventListener('click', (e) => {
 		})					
 	});
 
+    post.addEventListener("click", () => {
+	    dlt.setAttribute("data-target", "#Modalpost");
+	    dlt.setAttribute("data-toggle", "modal");			
+	});
+
 
 	edit.addEventListener('click', () => {
 		for (let i = 0; i < data.length; i++) {
-	    	head.value = data[i].title;
-	    	body.value = data[i].body;
+	    	noteHead.value = data[i].title;
+	    	noteBody.value = data[i].noteBody;
 	    }
 
 	});
