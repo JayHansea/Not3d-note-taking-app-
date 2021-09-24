@@ -1,4 +1,4 @@
-# Not3d
+# Not3s
 This is a note taking app
 
 user can:
@@ -8,4 +8,4 @@ user can:
   
 Also
 
- 4.  User can pick any border color of choice for each taken note.
+ 4.  User can pick any border color of choice for each taken note, these border color could serve for clasiffication and asthetic.
