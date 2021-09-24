@@ -19,7 +19,7 @@ clear.addEventListener('click', (e) => {
 post.addEventListener('click', (e) => {
 	e.preventDefault();
 
-    document.style.display = modalPost;
+    // document.style.display = modalPost;
 	let headValue = noteHead.value;
     let bodyValue = noteBody.value;
 
